@@ -26,6 +26,7 @@ ALLOWED_HOSTS = ["*"]
 # Application definition
 
 INSTALLED_APPS = [
+    'whitenoise.runserver_nostatic',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -185,4 +186,6 @@ CSRF_TRUSTED_ORIGINS = [
 CORS_ALLOW_ALL_ORIGINS = True
 
 STRIPE_TEST_SECRET_KEY= os.getenv('STRIPE_TEST_SECRET_KEY')
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 

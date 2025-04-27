@@ -24,8 +24,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "hotel_booking/wsgi.py"
+        "dest": "/hotel_booking/wsgi.py"
       }
     ]
   }
-  
