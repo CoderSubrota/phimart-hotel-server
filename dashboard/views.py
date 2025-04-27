@@ -1,6 +1,6 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAdminUser,AllowAny
+from rest_framework.permissions import IsAdminUser
 from bookings.models import Booking
 from django.db.models import Count, Sum
 from hotels.models import Hotel
@@ -8,7 +8,7 @@ from accounts.models import User
 from django.utils.timezone import now, timedelta
 
 class DashboardStatsView(APIView):
-    permission_classes = [AllowAny]
+    permission_classes = [IsAdminUser]
 
     def get(self, request):
         today = now()

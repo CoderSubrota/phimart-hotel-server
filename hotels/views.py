@@ -10,12 +10,8 @@ from django.http import JsonResponse
 from django.views import View
 import stripe
 from django.conf import settings
-from drf_yasg.utils import swagger_auto_schema
-from drf_yasg import openapi
-from rest_framework.parsers import JSONParser
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
-from django.shortcuts import render
 import json
 
 class HotelViewSet(viewsets.ModelViewSet):
@@ -25,13 +21,12 @@ class HotelViewSet(viewsets.ModelViewSet):
     
 class ReviewViewSet(viewsets.ModelViewSet):
     serializer_class = ReviewSerializer
-    permission_classes = [permissions.AllowAny]  # Allow access to everyone (you may replace with secure permissions)
+    permission_classes = [permissions.AllowAny]  
     
     def get_queryset(self):
-        # Ensure 'hotel_pk' exists in kwargs, or handle gracefully
         hotel_pk = self.kwargs.get('hotel_pk')
         if not hotel_pk:
-            return Review.objects.none()  # Return empty queryset if no hotel_pk
+            return Review.objects.none()  
         return Review.objects.filter(hotel_id=hotel_pk)
 
     def perform_create(self, serializer):
