@@ -59,7 +59,7 @@ class ActivateUserView(generics.GenericAPIView):
                 success_message = """
                     <div style="background-color: #d4edda; color: #155724; padding: 15px; border: 1px solid #c3e6cb; border-radius: 4px;">
                         Account activated successfully! <br><br>
-                        <a href="http://localhost:3000/login" style="background-color: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px;">Login Now</a>
+                        <a href="https://phimart-hotel.netlify.app/login" style="background-color: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px;">Login Now</a>
                     </div>
                 """
                 return HttpResponse(format_html(success_message), status=status.HTTP_200_OK)
@@ -67,7 +67,7 @@ class ActivateUserView(generics.GenericAPIView):
                 already_activated_message = """
                     <div style="background-color: #cce5ff; color: #004085; padding: 15px; border: 1px solid #b8daff; border-radius: 4px;">
                         Your account is already activated. <br><br>
-                        <a href="http://localhost:3000/login" style="background-color: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px;">Login Now</a>
+                        <a href="https://phimart-hotel.netlify.app/login" style="background-color: #007bff; color: white; padding: 10px 15px; text-decoration: none; border-radius: 4px;">Login Now</a>
                     </div>
                 """
                 return HttpResponse(format_html(already_activated_message), status=status.HTTP_200_OK)

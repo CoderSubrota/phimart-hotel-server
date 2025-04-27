@@ -18,7 +18,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = User.objects.create_user(**validated_data, is_active=False)
         uid = urlsafe_base64_encode(force_bytes(user.pk))
         token = default_token_generator.make_token(user)
-        activation_link = f"http://127.0.0.1:8000/api/accounts/activate/{uid}/{token}/"
+        activation_link = f"https://phimart-hotel-server.onrender.com/api/accounts/activate/{uid}/{token}/"
         send_mail('Activate your account', f'Click on this url to verify your account or copy and paste it to your browser: {activation_link}', 'noreply@hotelbooking.com', [user.email])
         return user
     
