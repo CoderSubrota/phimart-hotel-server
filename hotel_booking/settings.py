@@ -176,12 +176,10 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",
-    "https://iridescent-centaur-d6f8aa.netlify.app/"
+    'https://phimart-hotel.netlify.app',
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "https://iridescent-centaur-d6f8aa.netlify.app/",
-    "http://localhost:3000"
+    'https://phimart-hotel.netlify.app',
 ]
 
 CORS_ALLOW_ALL_ORIGINS = True
