@@ -176,10 +176,11 @@ SIMPLE_JWT = {
 }
 
 CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # Adjust this if your React app runs on a different port
+    "http://localhost:3000",
+    "https://iridescent-centaur-d6f8aa.netlify.app/"
 ]
 CSRF_TRUSTED_ORIGINS = [
-    "https://drf-hotel.onrender.com",
+    "https://iridescent-centaur-d6f8aa.netlify.app/",
     "http://localhost:3000"
 ]
 
